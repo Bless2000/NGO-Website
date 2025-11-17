@@ -1,0 +1,594 @@
+import React, { useEffect, useState } from 'react';
+
+const App = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const headerOffset = 150; // Adjust this value if your fixed header height changes
+          const elementPosition = target.offsetTop;
+          const offsetPosition = elementPosition - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  return (
+    <>
+      {/* ============================================
+         HEADER & NAVIGATION
+         ============================================ */}
+      <header className={`header ${scrolled ? 'scrolled' : ''}`} id="header">
+        <nav className="nav">
+            <a href="#home" className="nav__logo">D-SART</a>
+            <ul className="nav__links">
+                <li><a href="#home" className="nav__link">Home</a></li>
+                <li><a href="#about" className="nav__link">About</a></li>
+                <li><a href="#project" className="nav__link">Our Project</a></li>
+                <li><a href="#gallery" className="nav__link">Gallery</a></li>
+                <li><a href="#partnership" className="nav__link">Partner</a></li>
+                <li><a href="#team" className="nav__link">Team</a></li>
+                <li><a href="#contact" className="nav__link">Contact</a></li>
+            </ul>
+            <a href="#partnership" className="btn btn-primary">Donate Now</a>
+            <button className="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+      {/* Contact Banner */}
+      <div className="contact-banner">
+        📞 Contact us: 0574860230 | Saving Coasts, Saving Lives
+      </div>
+
+      {/* ============================================
+         HERO SECTION - ULTRA MODERN
+         ============================================ */}
+    <section className="hero" id="home">
+        {/* Animated Background */}
+        <div className="hero__background"></div>
+        
+        {/* Gradient Overlay */}
+        <div className="hero__overlay"></div>
+        
+        {/* Floating Shapes */}
+        <div className="hero__shapes">
+            <div className="shape shape-1"></div>
+            <div className="shape shape-2"></div>
+            <div className="shape shape-3"></div>
+        </div>
+        
+        {/* Hero Content */}
+        <div className="hero__content">
+            <div className="hero__badge">🌿 160+ Years of Conservation Legacy</div>
+            <h1 className="hero__title">
+                Restoring <span className="hero__title-highlight">Hope</span>,<br />
+                One Mangrove at a Time
+            </h1>
+            <p className="hero__subtitle">
+                Join D-SART in our mission to restore vital coastal ecosystems, empower communities, and build a sustainable future for West Africa through science-based mangrove conservation.
+            </p>
+            <div className="hero__buttons">
+                <a href="#partnership" className="btn btn-primary">Become a Partner</a>
+                <a href="#project" className="btn btn-secondary">Explore Our Impact</a>
+            </div>
+        </div>
+        
+        {/* Stats Bar */}
+        <div className="hero__stats">
+            <div className="hero__stat">
+                <span className="hero__stat-number">7,500+</span>
+                <span className="hero__stat-label">Hectares</span>
+            </div>
+            <div className="hero__stat">
+                <span className="hero__stat-number">300</span>
+                <span className="hero__stat-label">Families</span>
+            </div>
+            <div className="hero__stat">
+                <span className="hero__stat-number">1,200</span>
+                <span className="hero__stat-label">Green Jobs</span>
+            </div>
+        </div>
+        
+        {/* Scroll Indicator */}
+        <div className="scroll-indicator" onClick={() => document.getElementById('about').scrollIntoView({behavior: 'smooth'})}>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </div>
+    </section>
+
+      {/* ============================================
+         MISSION SECTION
+         ============================================ */}
+      <section className="mission" id="about">
+        <div className="container">
+          <div className="section-header">
+            <p className="section-subtitle">Our Mission</p>
+            <h2 className="section-title">Protecting Coastlines, Empowering Communities</h2>
+            <p className="section-description">
+              D-SART Wildlife Aquatic Conservation is a non-profit organization dedicated to wildlife conservation, re-afforestation, and aquatic life restoration. Mangroves are vital ecosystems that protect coastlines from erosion, absorb carbon to mitigate climate change, and provide habitat for diverse marine species. Our flagship initiative aims to reclaim and restore over 7,500 hectares of degraded mangrove land, directly supporting UN Sustainable Development Goals (SDGs 13, 14, and 15) and global ESG commitments.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
+         HERITAGE SECTION
+         ============================================ */}
+      <section className="heritage">
+        <div className="container">
+          <div className="heritage-grid">
+            <div className="heritage-text">
+              <p className="section-subtitle">Our Legacy</p>
+              <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>A Living Legacy Since 1860</h2>
+              <h3>Brief Biography of the Inherited Mangrove</h3>
+
+              <p>The inherited mangrove dates back to 1860, when the forefathers of the present custodians first settled along the coastal wetlands and began nurturing the mangrove ecosystem. Passed down through generations, this mangrove heritage has remained under the care of the same local family and community, who have preserved it as both a natural shield and a source of livelihood.</p>
+
+              <p>Over the decades, the true owners have continued planting, protecting, and restoring the mangrove to sustain fish habitats, prevent erosion, and support biodiversity. Despite modern challenges, their commitment to conservation has never wavered. Today, the descendants proudly uphold the legacy, integrating traditional knowledge with modern practices to ensure that the mangrove thrives for future generations.</p>
+
+              <div className="heritage-highlight">
+                <p>This living heritage stands as a symbol of resilience, stewardship, and environmental continuity — a testament to over 160 years of community-driven conservation.</p>
+              </div>
+            </div>
+
+            <div className="timeline">
+              <div className="timeline-item">
+                <div className="timeline-year">1860</div>
+                <div className="timeline-content">
+                  <h4>The Beginning</h4>
+                  <p>Forefathers settle along coastal wetlands and begin nurturing the mangrove ecosystem</p>
+                </div>
+              </div>
+              <div className="timeline-item">
+                <div className="timeline-year">1860-2025</div>
+                <div className="timeline-content">
+                  <h4>Generational Stewardship</h4>
+                  <p>Multiple generations continue planting, protecting, and restoring the mangroves</p>
+                </div>
+              </div>
+              <div className="timeline-item">
+                <div className="timeline-year">Today</div>
+                <div className="timeline-content">
+                  <h4>Modern Conservation</h4>
+                  <p>Descendants integrate traditional knowledge with modern practices for sustainable future</p>
+                </div>
+              </div>
+              <div className="timeline-item">
+                <div className="timeline-year">160+ Years</div>
+                <div className="timeline-content">
+                  <h4>Living Heritage</h4>
+                  <p>A testament to community-driven conservation and environmental continuity</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
+         STATS SECTION
+         ============================================ */}
+      <section className="stats">
+        <div className="container">
+          <div className="stats-grid">
+            <div className="stat-item">
+              <div className="stat-number">7,500+</div>
+              <div className="stat-label">Hectares to Restore</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-number">300</div>
+              <div className="stat-label">Families to Resettle</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-number">1,200</div>
+              <div className="stat-label">Sustainable Jobs Created</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-number">3</div>
+              <div className="stat-label">UN SDGs Supported</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
+         PROJECT SECTION
+         ============================================ */}
+      <section className="project" id="project">
+        <div className="container">
+          <div className="section-header">
+            <p className="section-subtitle">What We Do</p>
+            <h2 className="section-title">Our Transformative Project</h2>
+            <p className="section-description">
+              This initiative is designed to restore degraded ecosystems, support displaced communities, and create lasting environmental and economic impact.
+            </p>
+          </div>
+
+          <div className="project-grid">
+            <div className="project-card">
+              <div className="project-icon">🌿</div>
+              <h3>Ecosystem Restoration</h3>
+              <ul>
+                <li>Restore degraded coastal ecosystems</li>
+                <li>Revive marine biodiversity</li>
+                <li>Protect coastlines from erosion</li>
+                <li>Create carbon sinks for climate mitigation</li>
+              </ul>
+            </div>
+
+            <div className="project-card">
+              <div className="project-icon">🏘️</div>
+              <h3>Community Support</h3>
+              <ul>
+                <li>Resettle 300 displaced families</li>
+                <li>Provide housing and water access</li>
+                <li>Offer livelihood support programs</li>
+                <li>Education and training initiatives</li>
+              </ul>
+            </div>
+
+            <div className="project-card">
+              <div className="project-icon">💼</div>
+              <h3>Sustainable Employment</h3>
+              <ul>
+                <li>Create 1,200 green jobs</li>
+                <li>Develop ecotourism opportunities</li>
+                <li>Support local enterprises</li>
+                <li>Build long-term economic resilience</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
+         BENEFITS SECTION
+         ============================================ */}
+      <section className="benefits">
+        <div className="container">
+          <div className="section-header">
+            <p className="section-subtitle">Impact</p>
+            <h2 className="section-title">Why Mangrove Restoration Matters</h2>
+          </div>
+
+          <div className="benefits-grid">
+            <div className="benefit-card">
+              <div className="benefit-icon">🌊</div>
+              <h3>Coastal Protection</h3>
+              <p>Reduce coastal erosion and protect communities from storm surges and rising sea levels</p>
+            </div>
+
+            <div className="benefit-card">
+              <div className="benefit-icon">🌍</div>
+              <h3>Climate Action</h3>
+              <p>Absorb carbon dioxide and reduce greenhouse gas emissions significantly</p>
+            </div>
+
+            <div className="benefit-card">
+              <div className="benefit-icon">🐠</div>
+              <h3>Biodiversity Haven</h3>
+              <p>Provide critical habitat for coastal flora, fauna, and marine species</p>
+            </div>
+
+            <div className="benefit-card">
+              <div className="benefit-icon">👨‍👩‍👧‍👦</div>
+              <h3>Community Resilience</h3>
+              <p>Support local communities with sustainable livelihoods and economic opportunities</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
+         GALLERY SECTION
+         ============================================ */}
+      <section className="gallery" id="gallery">
+        <div className="container">
+          <div className="section-header">
+            <p className="section-subtitle">Our Journey</p>
+            <h2 className="section-title">Our Work in Action</h2>
+            <p className="gallery-intro">
+              From restoration to community empowerment — witness the transformation happening along our coastlines
+            </p>
+          </div>
+
+          <div className="gallery-grid">
+            {/* 1. Opening Video - Thriving Mangrove Forest */}
+            <div className="gallery-item">
+              <div className="gallery-image-container">
+                <video controls style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
+                  <source src="/videos/Video OfMangrove1.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div className="video-caption">
+                <div className="video-caption-title">
+                  <span>▶</span>
+                  <div>
+                    <h3>Thriving Mangrove Ecosystem</h3>
+                    <p>Experience the beauty and biodiversity of a healthy mangrove forest</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 2. Nursery Preparation */}
+            <div className="gallery-item">
+              <div className="gallery-image-container">
+                <img src="/images/gallery/Mangroves being planted.jpg" alt="Nursery preparation" className="gallery-image" />
+              </div>
+              <div className="gallery-overlay">
+                <h3>Nursery Preparation</h3>
+                <p>Tunu workers carefully filling nutrient-rich black soil into nursery polythene bags, creating the foundation for new mangrove life</p>
+              </div>
+            </div>
+
+            {/* 3. Active Planting Site */}
+            <div className="gallery-item">
+              <div className="gallery-image-container">
+                <img src="/images/gallery/Mangroves being planted.jpg" alt="Planting site" className="gallery-image" />
+              </div>
+              <div className="gallery-overlay">
+                <h3>Mangrove Planting at Tunu Site</h3>
+                <p>Our restoration team at work planting mangrove propagules along the coastal wetlands</p>
+              </div>
+            </div>
+
+            {/* 4. Community Workers */}
+            <div className="gallery-item">
+              <div className="gallery-image-container">
+                <img src="/images/gallery/icture of mangrove farmers.jpg" alt="Tunu workers" className="gallery-image" />
+              </div>
+              <div className="gallery-overlay">
+                <h3>Dedicated Tunu Workers</h3>
+                <p>Meet the hardworking community members who are the backbone of our restoration efforts</p>
+              </div>
+            </div>
+
+            {/* 5. Skills Training */}
+            <div className="gallery-item">
+              <div className="gallery-image-container">
+                <img src="/images/gallery/icture of mangrove farmers.jpg" alt="Skills training" className="gallery-image" />
+              </div>
+              <div className="gallery-overlay">
+                <h3>Sustainable Livelihood Training</h3>
+                <p>Skills training program for sustainable fish farming, empowering communities with alternative income sources</p>
+              </div>
+            </div>
+
+            {/* 6. Closing Video - The Challenge We Face */}
+            <div className="gallery-item">
+              <div className="gallery-image-container">
+                <video controls style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
+                  <source src="/videos/Mangroves being cut down.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div className="video-caption">
+                <div className="video-caption-title">
+                  <span>▶</span>
+                  <div>
+                    <h3>The Challenge: Mangrove Loss</h3>
+                    <p>Understanding the urgent need for restoration — witness the impact of deforestation and why our work matters</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="gallery-cta">
+            <h3>Be Part of the Solution</h3>
+            <p>Every image tells a story of hope, resilience, and transformation. Join us in restoring our coastlines and empowering communities.</p>
+            <div className="cta-buttons">
+              <a href="#partnership" className="btn btn-primary">Partner With Us</a>
+              <a href="#contact" className="btn btn-secondary">Get In Touch</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
+         PARTNERSHIP SECTION
+         ============================================ */}
+      <section className="partnership" id="partnership">
+        <div className="container">
+          <div className="section-header">
+            <p className="section-subtitle">Join Us</p>
+            <h2 className="section-title">Partner With Us</h2>
+          </div>
+
+          {/* Partnership Benefits */}
+          <div className="partnership-content">
+            <p>We are seeking forward-thinking partners to join us in this transformative mission. By sponsoring our project, your organization will:</p>
+
+            <div className="partnership-benefits">
+              <li>Demonstrate sustainability leadership and strengthen corporate reputation</li>
+              <li>Be featured as a key partner in biodiversity restoration across media, events, and reports</li>
+              <li>Align with national and global goals on climate resilience and community empowerment</li>
+              <li>Leave a visible legacy of hope, change, and environmental impact</li>
+            </div>
+          </div>
+
+          {/* Sponsorship Packages */}
+          <div className="sponsor-packages">
+            <h3>Sponsorship Packages</h3>
+
+            <div className="package">
+              <h4>Platinum Sponsor - $50,000+</h4>
+              <ul>
+                <li>Naming rights on flagship program (e.g., "Mangrove Nursery powered by [Company Name]")</li>
+                <li>Prominent logo placement on all campaigns, reports, and community events</li>
+                <li>Feature in press releases, newsletters, and social media shout-outs</li>
+                <li>Complimentary ESG/biodiversity consulting session with our experts</li>
+                <li>Exclusive site visits and progress reports</li>
+              </ul>
+            </div>
+
+            <div className="package">
+              <h4>Gold Sponsor - $25,000 - $49,999</h4>
+              <ul>
+                <li>Logo placement on major campaign materials</li>
+                <li>Recognition in annual reports and newsletters</li>
+                <li>Social media features and acknowledgment</li>
+                <li>Quarterly impact updates</li>
+              </ul>
+            </div>
+
+            <div className="package">
+              <h4>Silver Sponsor - $10,000 - $24,999</h4>
+              <ul>
+                <li>Logo on project website and materials</li>
+                <li>Social media recognition</li>
+                <li>Bi-annual project updates</li>
+              </ul>
+            </div>
+
+            <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+              <a href="#contact" className="btn btn-primary">Get Partnership Information</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
+         TEAM SECTION
+         ============================================ */}
+      <section className="team" id="team">
+        <div className="container">
+          <div className="section-header">
+            <p className="section-subtitle">Our People</p>
+            <h2 className="section-title">Meet Our Leadership Team</h2>
+          </div>
+
+          <div className="team-grid">
+            <div className="team-member">
+              <div className="team-photo">
+                <img src="/Chairperson, CEO Agnes Tsikata.jpg" alt="Agnes Tsikata" />
+              </div>
+              <div className="team-info">
+                <h3>Agnes Tsikata</h3>
+                <p className="team-role">Chairperson & CEO</p>
+                <p className="team-description">Leading our mission with passion and strategic vision for coastal conservation</p>
+              </div>
+            </div>
+
+            <div className="team-member">
+              <div className="team-photo">
+                <img src="/images/team/Rosemary Gyasi, Secretary.jpg" alt="Rosemary Gyasi" />
+              </div>
+              <div className="team-info">
+                <h3>Rosemary Gyasi</h3>
+                <p className="team-role">Secretary</p>
+                <p className="team-description">Providing essential administrative support and coordination for the team.</p>
+              </div>
+            </div>
+
+            <div className="team-member">
+              <div className="team-photo">
+                <img src="/images/team/asper Dunya, environmental, officer..jpg" alt="Jasper Dunya" />
+              </div>
+              <div className="team-info">
+                <h3>Jasper Dunya</h3>
+                <p className="team-role">Environmental Officer</p>
+                <p className="team-description">Ensuring scientific excellence in our restoration work</p>
+              </div>
+            </div>
+
+            <div className="team-member">
+              <div className="team-photo">
+                <img src="/images/team/Aloryito Hunor..jpg" alt="Aloryito Hunor" />
+              </div>
+              <div className="team-info">
+                <h3>Aloryito Hunor</h3>
+                <p className="team-role">Project Director</p>
+                <p className="team-description">Overseeing restoration activities and community engagement</p>
+              </div>
+            </div>
+
+            <div className="team-member">
+              <div className="team-photo">
+                <img src="/images/team/Nyaledzigbor Lumor:planer , reforestation worker..jpg" alt="Nyaledzigbor Lumor" />
+              </div>
+              <div className="team-info">
+                <h3>Nyaledzigbor Lumor</h3>
+                <p className="team-role">Restoration Worker</p>
+                <p className="team-description">Actively involved in the field, leading reforestation and restoration efforts.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
+         FOOTER
+         ============================================ */}
+      <footer className="footer" id="contact">
+        <div className="footer-grid">
+          <div className="footer-section">
+            <h3>D-SART Wildlife Aquatic Conservation</h3>
+            <p>Dedicated to wildlife conservation, re-afforestation, and aquatic life restoration.</p>
+            <p style={{ marginTop: '1.5rem' }}>📞 0574860230</p>
+            <p>✉️ info @dsart-conservation.org</p>
+          </div>
+
+          <div className="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#about" className="footer-link">About Us</a></li>
+              <li><a href="#project" className="footer-link">Our Project</a></li>
+              <li><a href="#partnership" className="footer-link">Become a Partner</a></li>
+              <li><a href="#team" className="footer-link">Our Team</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-section">
+            <h3>Get Involved</h3>
+            <ul>
+              <li><a href="#partnership" className="footer-link">Make a Donation</a></li>
+              <li><a href="#partnership" className="footer-link">Volunteer</a></li>
+              <li><a href="#partnership" className="footer-link">Corporate Partnership</a></li>
+              <li><a href="#" className="footer-link">News & Updates</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-section">
+            <h3>UN SDGs Alignment</h3>
+            <p>Our work directly supports:</p>
+            <ul style={{ marginTop: '1rem' }}>
+              <li>SDG 13: Climate Action</li>
+              <li>SDG 14: Life Below Water</li>
+              <li>SDG 15: Life on Land</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <p>&copy; 2025 D-SART Wildlife Aquatic Conservation. All rights reserved.</p>
+          <p style={{ marginTop: '0.5rem' }}>Saving Coasts, Saving Lives</p>
+        </div>
+      </footer>
+    </>
+  );
+};
+
+export default App;
