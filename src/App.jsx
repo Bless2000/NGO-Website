@@ -60,9 +60,7 @@ const App = () => {
         📞 Contact us: 0574860230 | Saving Coasts, Saving Lives
       </div>
 
-      {/* ============================================
-         HERO SECTION - ULTRA MODERN
-         ============================================ */}
+      {/* ----------------------------------Hero Section---------------------------------------------*/}
     <section className="hero" id="home">
         {/* Animated Background */}
         <div className="hero__background"></div>
@@ -93,21 +91,7 @@ const App = () => {
             </div>
         </div>
         
-        {/* Stats Bar */}
-        <div className="hero__stats">
-            <div className="hero__stat">
-                <span className="hero__stat-number">7,500+</span>
-                <span className="hero__stat-label">Hectares</span>
-            </div>
-            <div className="hero__stat">
-                <span className="hero__stat-number">300</span>
-                <span className="hero__stat-label">Families</span>
-            </div>
-            <div className="hero__stat">
-                <span className="hero__stat-number">1,200</span>
-                <span className="hero__stat-label">Green Jobs</span>
-            </div>
-        </div>
+       
         
         {/* Scroll Indicator */}
         <div className="scroll-indicator" onClick={() => document.getElementById('about').scrollIntoView({behavior: 'smooth'})}>
@@ -368,7 +352,7 @@ const App = () => {
             {/* 5. Skills Training */}
             <div className="gallery-item">
               <div className="gallery-image-container">
-                <img src="/images/gallery/icture of mangrove farmers.jpg" alt="Skills training" className="gallery-image" />
+                <img src="/images/gallery/SkillsTrainingForFishFarming.jpg" alt="Skills training" className="gallery-image" />
               </div>
               <div className="gallery-overlay">
                 <h3>Sustainable Livelihood Training</h3>
@@ -516,6 +500,17 @@ const App = () => {
 
             <div className="team-member">
               <div className="team-photo">
+                <img src="/images/team/Dennis Amoako.jpg" alt="Dennis Amoako" />
+              </div>
+              <div className="team-info">
+                <h3>Dennis Amoako</h3>
+                <p className="team-role">Management Committee member/Finance</p>
+                <p className="team-description">Manages the financial aspects and contributes to strategic management decisions.</p>
+              </div>
+            </div>
+
+            <div className="team-member">
+              <div className="team-photo">
                 <img src="/images/team/Aloryito Hunor..jpg" alt="Aloryito Hunor" />
               </div>
               <div className="team-info">
@@ -533,6 +528,17 @@ const App = () => {
                 <h3>Nyaledzigbor Lumor</h3>
                 <p className="team-role">Restoration Worker</p>
                 <p className="team-description">Actively involved in the field, leading reforestation and restoration efforts.</p>
+              </div>
+            </div>
+
+            <div className="team-member">
+              <div className="team-photo">
+                <img src="/images/team/Akplorwotor Dzita Agbledome.jpg" alt="Akplorwotor Dzita Agbledome" />
+              </div>
+              <div className="team-info">
+                <h3>Akplorwotor Dzita Agbledome</h3>
+                <p className="team-role">Community site engineer/ media</p>
+                <p className="team-description">Responsible for site engineering and media relations within the community.</p>
               </div>
             </div>
           </div>
