@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const App = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +26,7 @@ const App = () => {
             behavior: 'smooth'
           });
         }
+        setMenuOpen(false); // Close menu on link click
       });
     });
 
@@ -32,6 +34,10 @@ const App = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <>
@@ -41,7 +47,7 @@ const App = () => {
       <header className={`header ${scrolled ? 'scrolled' : ''}`} id="header">
         <nav className="nav">
             <a href="#home" className="nav__logo">D-SART</a>
-            <ul className="nav__links">
+            <ul className={`nav__links ${menuOpen ? 'mobile-active' : ''}`}>
                 <li><a href="#home" className="nav__link">Home</a></li>
                 <li><a href="#about" className="nav__link">About</a></li>
                 <li><a href="#project" className="nav__link">Our Project</a></li>
@@ -51,7 +57,7 @@ const App = () => {
                 <li><a href="#contact" className="nav__link">Contact</a></li>
             </ul>
             <a href="#partnership" className="btn btn-primary">Donate Now</a>
-            <button className="mobile-menu-btn">☰</button>
+            <button className="mobile-menu-btn" onClick={toggleMenu}>{menuOpen ? '✕' : '☰'}</button>
         </nav>
     </header>
 
@@ -106,15 +112,57 @@ const App = () => {
          ============================================ */}
       <section className="mission" id="about">
         <div className="container">
-          <div className="section-header">
-            <p className="section-subtitle">Our Mission</p>
-            <h2 className="section-title">Protecting Coastlines, Empowering Communities</h2>
-            <p className="section-description">
-              D-SART Wildlife Aquatic Conservation is a non-profit organization dedicated to wildlife conservation, re-afforestation, and aquatic life restoration. Mangroves are vital ecosystems that protect coastlines from erosion, absorb carbon to mitigate climate change, and provide habitat for diverse marine species. Our flagship initiative aims to reclaim and restore over 7,500 hectares of degraded mangrove land, directly supporting UN Sustainable Development Goals (SDGs 13, 14, and 15) and global ESG commitments.
-            </p>
-          </div>
+            <div className="section-header">
+                <p className="section-subtitle">Our Mission</p>
+                <h2 className="section-title">Planting, Protecting, and Preserving Mangroves</h2>
+                <p className="section-description">
+                    D-SART Wildlife Aquatic Conservation is a non-profit organization dedicated to the preservation of mangrove ecosystems and the protection of aquatic life in Ghana's coastal communities. Through comprehensive conservation efforts, we restore vital coastal habitats that provide environmental and socio-economic benefits for generations to come.
+                </p>
+            </div>
+
+            {/* Mission Focus Areas */}
+            <div className="mission-grid">
+                <div className="mission-card">
+                    <div className="mission-icon">🌱</div>
+                    <h3>Mangrove Reforestation</h3>
+                    <p>Undertaking extensive mangrove reforestation by planting native species and restoring degraded areas to enhance ecosystem resilience against climate change.</p>
+                </div>
+
+                <div className="mission-card">
+                    <div className="mission-icon">🐟</div>
+                    <h3>Biodiversity Conservation</h3>
+                    <p>Implementing marine protected areas and sustainable fishing regulations to preserve diverse aquatic life and prevent overexploitation of vital species.</p>
+                </div>
+
+                <div className="mission-card">
+                    <div className="mission-icon">👥</div>
+                    <h3>Community Engagement</h3>
+                    <p>Actively involving local communities through education, training, alternative livelihoods, and empowering residents to monitor and protect coastal ecosystems.</p>
+                </div>
+
+                <div className="mission-card">
+                    <div className="mission-icon">🔬</div>
+                    <h3>Scientific Research</h3>
+                    <p>Conducting ecological research to understand mangrove dynamics, carbon sequestration, and climate change impacts to inform sustainable conservation practices.</p>
+                </div>
+            </div>
+
+            {/* Crisis Alert Box */}
+            <div className="crisis-alert">
+                <h3><span>⚠️</span> Urgent Crisis in Coastal Communities</h3>
+                <p>
+                    Climatic conditions and livelihoods in Ghana's coastal areas are deteriorating rapidly. Fresh water sources that once sustained communities have turned saline, making it impossible for tilapia—the main economic resource—to breed. This environmental disaster threatens the survival of thousands of families who depend on these ecosystems.
+                </p>
+                <div className="affected-areas">
+                    <span className="area-tag">Srogbe</span>
+                    <span className="area-tag">Whuti</span>
+                    <span className="area-tag">Atorkor</span>
+                    <span className="area-tag">Dzita</span>
+                    <span className="area-tag">Anloga Region</span>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
       {/* ============================================
          HERITAGE SECTION
@@ -124,10 +172,12 @@ const App = () => {
           <div className="heritage-grid">
             <div className="heritage-text">
               <p className="section-subtitle">Our Legacy</p>
-              <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>A Living Legacy Since 1860</h2>
+              <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>A Living Legacy Since 1721</h2>
               <h3>Brief Biography of the Inherited Mangrove</h3>
 
               <p>The inherited mangrove dates back to 1860, when the forefathers of the present custodians first settled along the coastal wetlands and began nurturing the mangrove ecosystem. Passed down through generations, this mangrove heritage has remained under the care of the same local family and community, who have preserved it as both a natural shield and a source of livelihood.</p>
+
+              <p>Our legacy also extends to 1721, originating from the southern part of the Volta Region, encompassing areas such as Agbatsivi, Agortoe, Salo Akpashiafe, Agbledomi, Akplorwotokor, Dzita, Anyanui, Tunu, Bomego, Gamenu, and Vededeanu.</p>
 
               <p>Over the decades, the true owners have continued planting, protecting, and restoring the mangrove to sustain fish habitats, prevent erosion, and support biodiversity. Despite modern challenges, their commitment to conservation has never wavered. Today, the descendants proudly uphold the legacy, integrating traditional knowledge with modern practices to ensure that the mangrove thrives for future generations.</p>
 
@@ -137,6 +187,13 @@ const App = () => {
             </div>
 
             <div className="timeline">
+              <div className="timeline-item">
+                <div className="timeline-year">1721</div>
+                <div className="timeline-content">
+                  <h4>Ancient Roots</h4>
+                  <p>Legacy established in the southern Volta Region, encompassing various communities.</p>
+                </div>
+              </div>
               <div className="timeline-item">
                 <div className="timeline-year">1860</div>
                 <div className="timeline-content">
