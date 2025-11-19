@@ -182,7 +182,7 @@ const App = () => {
               <p>Over the decades, the true owners have continued planting, protecting, and restoring the mangrove to sustain fish habitats, prevent erosion, and support biodiversity. Despite modern challenges, their commitment to conservation has never wavered. Today, the descendants proudly uphold the legacy, integrating traditional knowledge with modern practices to ensure that the mangrove thrives for future generations.</p>
 
               <div className="heritage-highlight">
-                <p>This living heritage stands as a symbol of resilience, stewardship, and environmental continuity — a testament to over 160 years of community-driven conservation.</p>
+                <p>This living heritage stands as a symbol of resilience, stewardship, and environmental continuity — a testament to over 200 years of community-driven conservation.</p>
               </div>
             </div>
 
@@ -202,7 +202,7 @@ const App = () => {
                 </div>
               </div>
               <div className="timeline-item">
-                <div className="timeline-year">1860-2025</div>
+                <div className="timeline-year">1721-2025</div>
                 <div className="timeline-content">
                   <h4>Generational Stewardship</h4>
                   <p>Multiple generations continue planting, protecting, and restoring the mangroves</p>
@@ -216,7 +216,7 @@ const App = () => {
                 </div>
               </div>
               <div className="timeline-item">
-                <div className="timeline-year">160+ Years</div>
+                <div className="timeline-year">200+ Years</div>
                 <div className="timeline-content">
                   <h4>Living Heritage</h4>
                   <p>A testament to community-driven conservation and environmental continuity</p>
@@ -387,7 +387,9 @@ const App = () => {
             {/* 3. Active Planting Site */}
             <div className="gallery-item">
               <div className="gallery-image-container">
-                <img src="/images/gallery/Mangroves being planted.jpg" alt="Planting site" className="gallery-image" />
+                <video controls style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
+                  <source src="/videos/PlantingMangroveSeeds.mp4" type="video/mp4" />
+                </video>
               </div>
               <div className="gallery-overlay">
                 <h3>Mangrove Planting at Tunu Site</h3>
@@ -414,6 +416,24 @@ const App = () => {
               <div className="gallery-overlay">
                 <h3>Sustainable Livelihood Training</h3>
                 <p>Skills training program for sustainable fish farming, empowering communities with alternative income sources</p>
+              </div>
+            </div>
+
+            {/* New Video - Devastating Effects */}
+            <div className="gallery-item">
+              <div className="gallery-image-container">
+                <video controls style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
+                  <source src="/videos/FishesDeadOnTheSurface.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div className="video-caption">
+                <div className="video-caption-title">
+                  <span>▶</span>
+                  <div>
+                    <h3>The Devastating Impact of Mangrove Loss</h3>
+                    <p>Witness the tragic sight of fish dead on the water's surface, a direct result of mangrove destruction.</p>
+                  </div>
+                </div>
               </div>
             </div>
 
