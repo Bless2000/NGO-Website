@@ -529,6 +529,7 @@ const App = () => {
               <div className="team-info">
                 <h3>Agnes Tsikata</h3>
                 <p className="team-role">Chairperson & CEO</p>
+                <p className="team-contact">📞 0574860230</p>
                 <p className="team-description">Leading our mission with passion and strategic vision for coastal conservation</p>
               </div>
             </div>
@@ -562,6 +563,7 @@ const App = () => {
               <div className="team-info">
                 <h3>Dennis Amoako</h3>
                 <p className="team-role">Management Committee member/Finance</p>
+                <p className="team-contact">📞 0209279897</p>
                 <p className="team-description">Manages the financial aspects and contributes to strategic management decisions.</p>
               </div>
             </div>
