@@ -158,7 +158,7 @@ const App = () => {
                     <span className="area-tag">Whuti</span>
                     <span className="area-tag">Atorkor</span>
                     <span className="area-tag">Dzita</span>
-                    <span className="area-tag">Anloga Region</span>
+                    <span className="area-tag">Anloga</span>
                 </div>
             </div>
         </div>
@@ -400,7 +400,7 @@ const App = () => {
             {/* 4. Community Workers */}
             <div className="gallery-item">
               <div className="gallery-image-container">
-                <img src="/images/gallery/icture of mangrove farmers.jpg" alt="Tunu workers" className="gallery-image" />
+                <img src="/images/gallery/TunuWorkers.jpg" alt="Tunu workers" className="gallery-image" />
               </div>
               <div className="gallery-overlay">
                 <h3>Dedicated Tunu Workers</h3>
@@ -416,6 +416,17 @@ const App = () => {
               <div className="gallery-overlay">
                 <h3>Sustainable Livelihood Training</h3>
                 <p>Skills training program for sustainable fish farming, empowering communities with alternative income sources</p>
+              </div>
+            </div>
+
+            {/* New Image - Mangroves Cut for Firewood */}
+            <div className="gallery-item">
+              <div className="gallery-image-container">
+                <img src="/images/gallery/Firewood.jpg" alt="Mangroves cut for firewood" className="gallery-image" />
+              </div>
+              <div className="gallery-overlay">
+                <h3>Mangroves Cut for Firewood</h3>
+                <p>Mangroves being cut down for firewood, highlighting unsustainable practices.</p>
               </div>
             </div>
 
