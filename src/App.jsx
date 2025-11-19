@@ -437,19 +437,19 @@ const App = () => {
               </div>
             </div>
 
-            {/* 6. Closing Video - The Devastating Effects */}
+            {/* 6. Closing Video - The Challenge We Face */}
             <div className="gallery-item">
               <div className="gallery-image-container">
                 <video controls style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
-                  <source src="/videos/FishesDeadOnTheSurface.mp4" type="video/mp4" />
+                  <source src="/videos/Mangroves being cut down.mp4" type="video/mp4" />
                 </video>
               </div>
               <div className="video-caption">
                 <div className="video-caption-title">
                   <span>▶</span>
                   <div>
-                    <h3>The Devastating Effects of Mangrove Destruction</h3>
-                    <p>The bad effects of fishes dead on the surface of the water due to improper practices by unauthorized and non-settlers who are destroying the land and mangroves</p>
+                    <h3>The Challenge: Mangrove Loss</h3>
+                    <p>Understanding the urgent need for restoration — witness the impact of deforestation and why our work matters</p>
                   </div>
                 </div>
               </div>
