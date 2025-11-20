@@ -1,4 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import wisdomYao from './assets/Wisdom Yao Exe.jpg';
+import ebenWesti from './assets/Eben Westi.jpg';
+import agnesTsikata from './assets/Chairperson, CEO Agnes Tsikata.jpg';
+import rosemaryGyasi from './assets/Rosemary Gyasi, Secretary.jpg';
+import jasperDunya from './assets/asper Dunya, environmental, officer..jpg';
+import dennisAmoako from './assets/Dennis Amoako.jpg';
+import aloryitoHunor from './assets/Aloryito Hunor..jpg';
+import nyaledzigborLumor from './assets/Nyaledzigbor Lumor:planer , reforestation worker..jpg';
+import akplorwotorDzita from './assets/Akplorwotor Dzita Agbledome.jpg';
+import firewood from './assets/Firewood.jpg';
+import heroImg from './assets/HeroImg.jpg';
+import mangroveFarmers from './assets/icture of mangrove farmers.jpg';
+import mangrovesBeingPlanted from './assets/Mangroves being planted.jpg';
+import pictreOfWorkers from './assets/PictreofWorkers.jpg';
+import skillsTraining from './assets/SkillsTrainingForFishFarming.jpg';
+import tunuWorkers from './assets/TunuWorkers.jpg';
+import videoOfMangrove1 from './assets/videos/Video OfMangrove1.mp4';
+import plantingMangroveSeeds from './assets/videos/PlantingMangroveSeeds.mp4';
+import fishesDeadOnTheSurface from './assets/videos/FishesDeadOnTheSurface.mp4';
+import mangrovesBeingCutDown from './assets/videos/Mangroves being cut down.mp4';
 
 const App = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -359,7 +379,7 @@ const App = () => {
             <div className="gallery-item">
               <div className="gallery-image-container">
                 <video controls style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
-                  <source src="/videos/Video OfMangrove1.mp4" type="video/mp4" />
+                  <source src={videoOfMangrove1} type="video/mp4" />
                 </video>
               </div>
               <div className="video-caption">
@@ -376,7 +396,7 @@ const App = () => {
             {/* 2. Nursery Preparation */}
             <div className="gallery-item">
               <div className="gallery-image-container">
-                <img src="/images/gallery/Mangroves being planted.jpg" alt="Nursery preparation" className="gallery-image" />
+                <img src={mangrovesBeingPlanted} alt="Nursery preparation" className="gallery-image" />
               </div>
               <div className="gallery-overlay">
                 <h3>Nursery Preparation</h3>
@@ -388,7 +408,7 @@ const App = () => {
             <div className="gallery-item">
               <div className="gallery-image-container">
                 <video controls style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
-                  <source src="/videos/PlantingMangroveSeeds.mp4" type="video/mp4" />
+                  <source src={plantingMangroveSeeds} type="video/mp4" />
                 </video>
               </div>
               <div className="gallery-overlay">
@@ -400,7 +420,7 @@ const App = () => {
             {/* 4. Community Workers */}
             <div className="gallery-item">
               <div className="gallery-image-container">
-                <img src="/images/gallery/TunuWorkers.jpg" alt="Tunu workers" className="gallery-image" />
+                <img src={tunuWorkers} alt="Tunu workers" className="gallery-image" />
               </div>
               <div className="gallery-overlay">
                 <h3>Dedicated Tunu Workers</h3>
@@ -411,7 +431,7 @@ const App = () => {
             {/* 5. Skills Training */}
             <div className="gallery-item">
               <div className="gallery-image-container">
-                <img src="/images/gallery/SkillsTrainingForFishFarming.jpg" alt="Skills training" className="gallery-image" />
+                <img src={skillsTraining} alt="Skills training" className="gallery-image" />
               </div>
               <div className="gallery-overlay">
                 <h3>Sustainable Livelihood Training</h3>
@@ -422,7 +442,7 @@ const App = () => {
             {/* New Image - Mangroves Cut for Firewood */}
             <div className="gallery-item">
               <div className="gallery-image-container">
-                <img src="/images/gallery/Firewood.jpg" alt="Mangroves cut for firewood" className="gallery-image" />
+                <img src={firewood} alt="Mangroves cut for firewood" className="gallery-image" />
               </div>
               <div className="gallery-overlay">
                 <h3>Mangroves Cut for Firewood</h3>
@@ -434,7 +454,7 @@ const App = () => {
             <div className="gallery-item">
               <div className="gallery-image-container">
                 <video controls style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
-                  <source src="/videos/FishesDeadOnTheSurface.mp4" type="video/mp4" />
+                  <source src={fishesDeadOnTheSurface} type="video/mp4" />
                 </video>
               </div>
               <div className="video-caption">
@@ -452,7 +472,7 @@ const App = () => {
             <div className="gallery-item">
               <div className="gallery-image-container">
                 <video controls style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
-                  <source src="/videos/Mangroves being cut down.mp4" type="video/mp4" />
+                  <source src={mangrovesBeingCutDown} type="video/mp4" />
                 </video>
               </div>
               <div className="video-caption">
@@ -555,7 +575,7 @@ const App = () => {
           <div className="team-grid">
             <div className="team-member">
               <div className="team-photo">
-                <img src="/Chairperson, CEO Agnes Tsikata.jpg" alt="Agnes Tsikata" />
+                <img src={agnesTsikata} alt="Agnes Tsikata" />
               </div>
               <div className="team-info">
                 <h3>Agnes Tsikata</h3>
@@ -567,7 +587,7 @@ const App = () => {
 
             <div className="team-member">
               <div className="team-photo">
-                <img src="/images/team/Rosemary Gyasi, Secretary.jpg" alt="Rosemary Gyasi" />
+                <img src={rosemaryGyasi} alt="Rosemary Gyasi" />
               </div>
               <div className="team-info">
                 <h3>Rosemary Gyasi</h3>
@@ -578,7 +598,19 @@ const App = () => {
 
             <div className="team-member">
               <div className="team-photo">
-                <img src="/images/team/asper Dunya, environmental, officer..jpg" alt="Jasper Dunya" />
+                <img src={wisdomYao} alt="Mr. Wisdom Yao Exe" />
+              </div>
+              <div className="team-info">
+                <h3>Mr. Wisdom Yao Exe</h3> 
+                <p className="team-role">Director, Project Resource Consultant</p>
+                <p className="team-contact">📞 0245964448</p>
+                <p className="team-description">Provides expert consultancy on project resources and directorial oversight.</p>
+              </div>
+            </div>
+
+            <div className="team-member">
+              <div className="team-photo">
+                <img src={jasperDunya} alt="Jasper Dunya" />
               </div>
               <div className="team-info">
                 <h3>Jasper Dunya</h3>
@@ -589,7 +621,7 @@ const App = () => {
 
             <div className="team-member">
               <div className="team-photo">
-                <img src="/images/team/Dennis Amoako.jpg" alt="Dennis Amoako" />
+                <img src={dennisAmoako} alt="Dennis Amoako" />
               </div>
               <div className="team-info">
                 <h3>Dennis Amoako</h3>
@@ -601,7 +633,7 @@ const App = () => {
 
             <div className="team-member">
               <div className="team-photo">
-                <img src="/images/team/Aloryito Hunor..jpg" alt="Aloryito Hunor" />
+                <img src={aloryitoHunor} alt="Aloryito Hunor" />
               </div>
               <div className="team-info">
                 <h3>Aloryito Hunor</h3>
@@ -612,7 +644,7 @@ const App = () => {
 
             <div className="team-member">
               <div className="team-photo">
-                <img src="/images/team/Nyaledzigbor Lumor:planer , reforestation worker..jpg" alt="Nyaledzigbor Lumor" />
+                <img src={nyaledzigborLumor} alt="Nyaledzigbor Lumor" />
               </div>
               <div className="team-info">
                 <h3>Nyaledzigbor Lumor</h3>
@@ -623,12 +655,23 @@ const App = () => {
 
             <div className="team-member">
               <div className="team-photo">
-                <img src="/images/team/Akplorwotor Dzita Agbledome.jpg" alt="Akplorwotor Dzita Agbledome" />
+                <img src={akplorwotorDzita} alt="Akplorwotor Dzita Agbledome" />
               </div>
               <div className="team-info">
                 <h3>Akplorwotor Dzita Agbledome</h3>
                 <p className="team-role">Community site engineer/ media</p>
                 <p className="team-description">Responsible for site engineering and media relations within the community.</p>
+              </div>
+            </div>
+
+            <div className="team-member">
+              <div className="team-photo">
+                <img src={ebenWesti} alt="Eben Westi" />
+              </div>
+              <div className="team-info">
+                <h3>Eben Westi</h3>
+                <p className="team-role">Project Manager</p>
+                <p className="team-description">Manages the day-to-day operations of the project.</p>
               </div>
             </div>
           </div>
